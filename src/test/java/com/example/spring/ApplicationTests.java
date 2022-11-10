@@ -18,5 +18,15 @@ class ApplicationTests {
 
     }
 
+    @Test
+    void iocTestController__isSingleton() {
+
+        TestController testController1 = IocContainer.getTestController();
+        TestController testController2 = IocContainer.getTestController();
+
+        assertThat(testController2).isEqualTo(testController1);
+
+    }
+
 }
 
