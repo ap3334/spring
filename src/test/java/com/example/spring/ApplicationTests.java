@@ -1,13 +1,22 @@
 package com.example.spring;
 
+import com.example.spring.controller.TestController;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 class ApplicationTests {
 
     @Test
-    void contextLoads() {
+    void iocTestController__isNotNull() {
+
+        TestController testController = IocContainer.getTestController();
+
+        assertThat(testController).isNotNull();
+
     }
 
 }
+
